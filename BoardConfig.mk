@@ -81,7 +81,9 @@ BOARD_SUPPRESS_SECURE_ERASE := true
 BOARD_SEPOLICY_DIRS += device/samsung/matissewifi/sepolicy
 
 BOARD_SEPOLICY_UNION += \
-		platform_app.te \
+	hostapd.te \
+	platform_app.te \
+	kernel.te
 
 # BlissPop Configs
 TARGET_TC_ROM := 4.8-sm
