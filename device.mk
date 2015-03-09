@@ -34,8 +34,15 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.secure=0 \
     ro.adb.secure=0
 
+# Recovery
+PRODUCT_PACKAGES += \
+    init.recovery.qcom.rc \
+    offmode_charging_res_images \
+    offmode_charging_warn_res_images \
+    dt.img
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
+    bionic/libc/zoneinfo/tzdata:recovery/root/system/usr/share/zoneinfo/tzdata
+
 
 # Inherit from msm8226-common
 $(call inherit-product, device/samsung/msm8226-common/msm8226.mk)
