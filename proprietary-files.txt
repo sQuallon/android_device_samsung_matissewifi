@@ -4,7 +4,10 @@
 #
 # You need to DeOdex the APK if pulling an ODEXed version from stock
 #####################################################################
-app/TimeService.apk
+-app/TimeService/TimeService.apk
+-app/com.qualcomm.location/com.qualcomm.location.apk
+etc/permissions/com.qualcomm.location.xml
+-vendor/lib/libHevcSwDecoder.so
 bin/btnvtool
 bin/ds_fmc_appd
 bin/hci_qcomm_init
@@ -348,4 +351,4 @@ vendor/lib/egl/libGLESv1_CM_adreno.so
 vendor/lib/egl/libGLESv2_adreno.so
 vendor/lib/egl/libq3dtools_adreno.so
 vendor/lib/hw/power.qcom.so
-vendor/lib/mediadrm/libwvdrmengine.s
+vendor/lib/mediadrm/libwvdrmengine.so

@@ -7,7 +7,7 @@
     },
     {
         "remote": "github",
-        "repository": "android_device_samsung_matissewifi",
+        "repository": "sub-b/android_device_samsung_matissewifi",
         "target_path": "device/samsung/matissewifi",
         "revision": "lp5.0"
     },
@@ -19,7 +19,7 @@
     },
     {
         "remote": "github",
-        "repository": "android_kernel_samsung_matissewifi",
+        "repository": "sub-b/android_kernel_samsung_matissewifi",
         "target_path": "kernel/samsung/matissewifi",
         "revision": "lp5.0"
     },
