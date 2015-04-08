@@ -31,14 +31,13 @@ TARGET_LIBINIT_DEFINES_FILE := $(LOCAL_PATH)/init/init_matisse.c
 TARGET_UNIFIED_DEVICE := true
 
 # Kernel
-BOARD_CUSTOM_BOOTIMG_MK 		:= $(LOCAL_PATH)/mkbootimg.mk
-BOARD_KERNEL_BASE 				:= 0x00000000
-BOARD_KERNEL_CMDLINE 			:= console=null androidboot.console=null androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 androidboot.selinux=permissive
-BOARD_KERNEL_PAGESIZE 			:= 2048
+BOARD_CUSTOM_BOOTIMG_MK 		:= $(LOCAL_PATH)/mkbootimg-lzma.mk
+BOARD_KERNEL_BASE 			:= 0x00000000
+BOARD_KERNEL_CMDLINE 			:= console=null androidboot.console=null androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3
 BOARD_KERNEL_SEPARATED_DT 		:= true
 BOARD_MKBOOTIMG_ARGS 			:= --ramdisk_offset 0x02000000 --tags_offset 0x1e00000
 TARGET_KERNEL_SOURCE := kernel/samsung/s3ve3g
-TARGET_KERNEL_CONFIG := cm-matissewifi_defconfig
+TARGET_KERNEL_CONFIG := twrp-matissewifi_defconfig
 #TARGET_KERNEL_SELINUX_CONFIG := selinux_defconfig
 TARGET_KERNEL_VARIANT_CONFIG := msm8226-sec_matissewifi_defconfig
 
@@ -49,9 +48,7 @@ BOARD_RECOVERYIMAGE_PARTITION_SIZE := 15485760
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2097152000
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 12562627584
 
-
-
-#PRODUCT_COPY_FILES := device/samsung/matissewifi/twrp.fstab:recovery/root/etc/twrp.fstab
+PRODUCT_COPY_FILES := device/samsung/matissewifi/twrp/twrp.fstab:recovery/root/etc/twrp.fstab
 
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/matissewifi
@@ -59,20 +56,20 @@ TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/matissewifi
 # SELinux
 -include device/qcom/sepolicy/sepolicy.mk
 
-#BOARD_SEPOLICY_DIRS += device/samsung/matissewifi/sepolicy
+BOARD_SEPOLICY_DIRS += device/samsung/matissewifi/sepolicy
 
-#BOARD_SEPOLICY_UNION += \
-#		platform_app.te \
-#		recovery.te
+BOARD_SEPOLICY_UNION += \
+		platform_app.te \
+		recovery.te
 
 # BlissPop Configs
 #TARGET_TC_ROM := 4.8-sm
 #TARGET_TC_KERNEL := 4.8-sm
-BLISSIFY := true
+#BLISSIFY := true
 #BLISS_O3 := true
 #BLISS_STRICT := true
 #BLISS_GRAPHITE := true
-BLISS_KRAIT := true
+#BLISS_KRAIT := true
 #BLISS_PIPE := true
 #TARGET_GCC_VERSION_EXP := $(TARGET_TC_ROM)
 #TARGET_KERNEL_CUSTOM_TOOLCHAIN := $(TARGET_TC_KERNEL)

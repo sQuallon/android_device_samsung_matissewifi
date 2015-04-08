@@ -12,12 +12,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Inherit some common Bliss stuff.
-$(call inherit-product, vendor/bliss/config/common_full_phone.mk)
 
-# Inherit device configuration
-$(call inherit-product, device/samsung/matissewifi/full_matissewifi.mk)
-
-# Release name
-PRODUCT_RELEASE_NAME := SM-T530
-PRODUCT_NAME := bliss_matissewifi
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
+ 
+PRODUCT_DEVICE := matissewifi
+PRODUCT_NAME := omni_matissewifi
+PRODUCT_BRAND := samsung
+PRODUCT_MODEL := SM-T530
+PRODUCT_MANUFACTURER := samsung

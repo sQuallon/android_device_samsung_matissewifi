@@ -12,15 +12,20 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
+ # Boot animation
+TARGET_SCREEN_HEIGHT := 800
+TARGET_SCREEN_WIDTH := 1280
 
-# Inherit from matissewifi device
-$(call inherit-product, device/samsung/matissewifi/device.mk)
+# Inherit some common Bliss stuff.
+$(call inherit-product, vendor/omni/config/common.mk)
 
-# Device identifier. This must come after all inclusions
+# Inherit device configuration
+$(call inherit-product, device/samsung/matissewifi/matissewifi.mk)
+
+# Release name
+
 PRODUCT_DEVICE := matissewifi
-PRODUCT_NAME := full_matissewifi
+PRODUCT_NAME := omni_matissewifi
 PRODUCT_BRAND := samsung
 PRODUCT_MODEL := SM-T530
 PRODUCT_MANUFACTURER := samsung
