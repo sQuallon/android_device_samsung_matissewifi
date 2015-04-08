@@ -1,5 +1,5 @@
 # Recovery
-TARGET_RECOVERY_FSTAB := device/samsung/matissewifi/twrp/twrp.fstab
+TARGET_RECOVERY_FSTAB := device/samsung/matissewifi/rootdir/etc/fstab.qcom
 
 #TWRP flags
 DEVICE_RESOLUTION 				:= 1280x800
