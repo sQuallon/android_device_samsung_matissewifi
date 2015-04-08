@@ -69,11 +69,10 @@ ro.carrier=wifi-only
 
 # GCC Build Prop Lines
 ro.sm.flags=Extreme
-ro.sm.android=4.8-sm
-ro.sm.kernel=4.8-linaro
+ro.sm.android=4.8.5-(SaberMod-4.8.x_android-graphite)-20150210-(release)
+ro.sm.kernel=4.8.5-(SaberMod-4.8.x_arm-graphite)-20150210-(release)
 
-
-#ro.build.selinux=1
+ro.build.selinux=1
 #ro.config.tima=1
 #ro.config.timaversion=3.0
 #ro.config.knox=v30
@@ -82,3 +81,6 @@ ro.sm.kernel=4.8-linaro
 #ro.setupwizard.mode=OPTIONAL
 #ro.com.google.gmsversion=4.4_r4
 dalvik.vm.dexopt-flags=m=y
+
+ro.product.device=matissewifi
+ro.product.model=SM-T530
