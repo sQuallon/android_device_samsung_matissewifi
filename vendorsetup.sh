@@ -1,2 +1,2 @@
-add_lunch_combo bliss_s3ve3g-eng
-add_lunch_combo bliss_s3ve3g-userdebug
+add_lunch_combo bliss_matissewifi-eng
+add_lunch_combo bliss_matissewifi-userdebug

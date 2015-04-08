@@ -14,6 +14,11 @@
 
 LOCAL_PATH := device/samsung/matissewifi
 
+#PRODUCT_COPY_FILES += \
+#	$(LOCAL_PATH)/twrp/file_contexts:recovery/root/prebuilt_file_contexts \
+#	$(LOCAL_PATH)/twrp/twrp.fstab:recovery/root/etc/twrp.fstab \
+#	$(LOCAL_PATH)/twrp/init.recovery.qcom.rc:root/init.recovery.qcom.rc
+
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
