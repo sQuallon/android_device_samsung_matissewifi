@@ -3,30 +3,24 @@
         "remote": "github",
         "repository": "sub-b/android_device_samsung_msm8226-common",
         "target_path": "device/samsung/msm8226-common",
-        "revision": "lp5.1"
-    },
-    {
-        "remote": "github",
-        "repository": "sub-b/android_device_samsung_matissewifi",
-        "target_path": "device/samsung/matissewifi",
-        "revision": "lp5.1"
-    },
-    {
-        "remote": "github",
-        "repository": "sub-b/android_kernel_samsung_s3ve3g",
-        "target_path": "kernel/samsung/s3ve3g",
-        "revision": "lp5.1"
-    },
-    {
-        "remote": "github",
-        "repository": "sub-b/android_vendor_samsung_matissewifi",
-        "target_path": "vendor/samsung/matissewifi",
-        "revision": "lp5.1"
+        "revision": "lp5.0"
     },
     {
         "remote": "TeamBliss-Devices",
         "repository": "android_device_samsung_qcom-common",
         "target_path": "device/samsung/qcom-common",
+        "revision": "lp5.0"
+    },
+    {
+        "remote": "github",
+        "repository": "sub-b/android_device_samsung_matissewifi",
+        "target_path": "device/samsung/matissewifi",
+        "revision": "lp5.0"
+    },
+    {
+        "remote": "github",
+        "repository": "sub-b/android_kernel_samsung_s3ve3g",
+        "target_path": "kernel/samsung/s3ve3g",
         "revision": "lp5.0"
     },
     {
@@ -42,3 +36,4 @@
         "revision": "cm-12.0"
     }
 ]
+

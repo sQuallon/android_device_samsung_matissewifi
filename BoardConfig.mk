@@ -24,14 +24,14 @@ LOCAL_PATH := device/samsung/matissewifi
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
 
 # CMHW
-BOARD_HARDWARE_CLASS += device/samsung/matissewifi/cmhw
+#BOARD_HARDWARE_CLASS += device/samsung/matissewifi/cmhw
 
 # Init
 TARGET_LIBINIT_DEFINES_FILE := $(LOCAL_PATH)/init/init_matisse.c
 TARGET_UNIFIED_DEVICE := true
 
 # Kernel
-BOARD_CUSTOM_BOOTIMG_MK 		:= $(LOCAL_PATH)/mkbootimg-lzma.mk
+BOARD_CUSTOM_BOOTIMG_MK 		:= $(LOCAL_PATH)/mkbootimg.mk
 BOARD_KERNEL_BASE 				:= 0x00000000
 BOARD_KERNEL_CMDLINE 			:= console=null androidboot.console=null androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 androidboot.selinux=permissive
 BOARD_KERNEL_PAGESIZE 			:= 2048
@@ -45,7 +45,7 @@ TARGET_KERNEL_VARIANT_CONFIG := msm8226-sec_matissewifi_defconfig
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 4096
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x00A00000
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 10485760
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 15485760
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2097152000
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 12562627584
 
