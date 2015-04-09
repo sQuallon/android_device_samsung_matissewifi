@@ -14,11 +14,6 @@
 
 LOCAL_PATH := device/samsung/matissewifi
 
-#PRODUCT_COPY_FILES += \
-#	$(LOCAL_PATH)/twrp/file_contexts:recovery/root/prebuilt_file_contexts \
-#	$(LOCAL_PATH)/twrp/twrp.fstab:recovery/root/etc/twrp.fstab \
-#	$(LOCAL_PATH)/twrp/init.recovery.qcom.rc:root/init.recovery.qcom.rc
-
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
@@ -59,15 +54,21 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.secure=0 \
     ro.adb.secure=0
 
+RODUCT_COPY_FILES += \
+    bionic/libc/zoneinfo/tzdata:recovery/root/system/usr/share/zoneinfo/tzdata
+
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
+    device/samsung/matissewifi/twrp/twrp:recovery/root/etc/twrp
+
+PRODUCT_PACKAGES += \
+    init.recovery.qcom.rc
 
 # Override build.prop
 PRODUCT_PROPERTY_OVERRIDES += \
-	ro.sf.lcd_density=160 \
-	ro.carrier=wifi-only \
-	ro.radio.nori=yes \
-	keyguard.no_require_sim=1
+    ro.sf.lcd_density=160 \
+    ro.carrier=wifi-only \
+    ro.radio.nori=yes \
+    keyguard.no_require_sim=1
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
