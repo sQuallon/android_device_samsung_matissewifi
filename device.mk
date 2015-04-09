@@ -58,7 +58,7 @@ RODUCT_COPY_FILES += \
     bionic/libc/zoneinfo/tzdata:recovery/root/system/usr/share/zoneinfo/tzdata
 
 PRODUCT_COPY_FILES += \
-    device/samsung/matissewifi/twrp/twrp:recovery/root/etc/twrp
+    $(LOCAL_PATH)/twrp/twrp:recovery/root/etc/twrp
 
 PRODUCT_PACKAGES += \
     init.recovery.qcom.rc

@@ -31,7 +31,7 @@ TARGET_LIBINIT_DEFINES_FILE := $(LOCAL_PATH)/init/init_matisse.c
 TARGET_UNIFIED_DEVICE := true
 
 # Kernel
-BOARD_CUSTOM_BOOTIMG_MK 	:= $(LOCAL_PATH)/mkbootimg-lzma.mk
+BOARD_CUSTOM_BOOTIMG_MK 	:= $(LOCAL_PATH)/mkbootimg.mk
 BOARD_KERNEL_BASE 		:= 0x00000000
 BOARD_KERNEL_CMDLINE 		:= console=null androidboot.console=null androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 androidboot.selinux=permissive
 BOARD_KERNEL_PAGESIZE 		:= 2048
@@ -53,7 +53,7 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 12562627584
 TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/matissewifi
 
 # Recovery
-TARGET_RECOVERY_FSTAB := device/samsung/matissewifi/rootdir/fstab.qcom
+TARGET_RECOVERY_FSTAB := device/samsung/matissewifi/rootdir/etc/fstab.qcom
 DEVICE_RESOLUTION := 1280x800
 
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
@@ -70,7 +70,7 @@ TW_NO_REBOOT_BOOTLOADER := true
 TW_HAS_DOWNLOAD_MODE := true
 BOARD_SUPPRESS_SECURE_ERASE := true
 
-#TARGET_PREBUILT_KERNEL := device/htc/m8/recovery/kernel/kernel
+#TARGET_PREBUILT_KERNEL := device/samsung/matissewifi/twrp/kernel
 #TARGET_RECOVERY_INITRC := device/htc/m8/recovery/etc/init.rc
 
 #BOARD_RECOVERY_BLDRMSG_OFFSET := 2048
@@ -78,12 +78,12 @@ BOARD_SUPPRESS_SECURE_ERASE := true
 # SELinux
 -include device/qcom/sepolicy/sepolicy.mk
 
-BOARD_SEPOLICY_DIRS += device/samsung/matissewifi/sepolicy
+#BOARD_SEPOLICY_DIRS += device/samsung/matissewifi/sepolicy
 
-BOARD_SEPOLICY_UNION += \
-	hostapd.te \
-	platform_app.te \
-	kernel.te
+#BOARD_SEPOLICY_UNION += \
+#	mediaserver.te \
+#	platform_app.te \
+#	kernel.te
 
 # BlissPop Configs
 TARGET_TC_ROM := 4.8-sm
