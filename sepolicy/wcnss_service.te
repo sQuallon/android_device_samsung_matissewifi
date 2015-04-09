@@ -1,5 +1,3 @@
 allow wcnss_service efs_file:dir search;
-<<<<<<< HEAD
 allow wcnss_service wifi_efs_file:file { getattr open read };
-=======
->>>>>>> 2d78edf... sepolicy: Adress more denials and update init
+
