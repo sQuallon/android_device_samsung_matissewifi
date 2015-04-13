@@ -78,6 +78,7 @@ TW_CRYPTO_KEY_LOC := "footer"
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun0/file
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
+BOARD_SUPPRESS_SECURE_ERASE := true
 
 PRODUCT_COPY_FILES := device/samsung/matissewifi/rootdir/etc/twrp.fstab:recovery/root/etc/twrp.fstab
 
@@ -87,12 +88,12 @@ MR_INPUT_TYPE := type_b
 MR_INIT_DEVICES := $(LOCAL_PATH)/mr_init_devices.c
 MR_DPI := hdpi
 MR_DPI_FONT := 216
-MR_FSTAB := $(LOCAL_PATH)/recovery/twrp.fstab
+MR_FSTAB := $(LOCAL_PATH)/rootdir/etc/twrp.fstab
 # End of first RAM region is 0x083fffff, so we set it to for example 0x06500000
 MR_KEXEC_MEM_MIN := 0x06500000
 MR_KEXEC_DTB := true
-MR_USE_QCOM_OVERLAY := true
-MR_QCOM_OVERLAY_HEADER := "hardware/qcom/msm8x26/kernel-headers/linux/ion.h"
+#MR_USE_QCOM_OVERLAY := true
+#MR_QCOM_OVERLAY_HEADER := "hardware/qcom/msm8x26/kernel-headers/linux/ion.h"
 #MR_QCOM_OVERLAY_HEADER2 := "hardware/qcom/msm8x26/kernel-headers/linux/ion.h"
 #MR_QCOM_OVERLAY_CUSTOM_PIXEL_FORMAT := RGBX_8888
 # MR_INFOS := d$(LOCAL_PATH)/mrom_infos
