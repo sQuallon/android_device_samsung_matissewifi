@@ -1,4 +1,4 @@
-# Copyright (C) 2014 The CyanogenMod Project
+# Copyright (C) 2015 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,12 +12,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Inherit some common Bliss stuff.
-$(call inherit-product, vendor/bliss/config/common_full_tablet_wifionly.mk)
+LOCAL_PATH:= $(call my-dir)
+include $(CLEAR_VARS)
 
-# Inherit device configuration
-$(call inherit-product, device/samsung/matissewifi/full_matissewifi.mk)
+LOCAL_SRC_FILES := wcnss_qmi_client.c
 
-# Release name
-PRODUCT_RELEASE_NAME := SM-T530
-PRODUCT_NAME := bliss_matissewifi
+LOCAL_C_INCLUDES += hardware/qcom/wlan/wcnss_service
+LOCAL_CFLAGS += -Wall
+
+LOCAL_SHARED_LIBRARIES := libc libcutils libutils liblog
+
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE := libwcnss_qmi
+
+include $(BUILD_SHARED_LIBRARY)

@@ -24,7 +24,7 @@ LOCAL_PATH := device/samsung/matissewifi
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
 
 # CMHW
-#BOARD_HARDWARE_CLASS += device/samsung/matissewifi/cmhw
+BOARD_HARDWARE_CLASS += device/samsung/matissewifi/cmhw
 
 # Init
 TARGET_LIBINIT_DEFINES_FILE := $(LOCAL_PATH)/init/init_matisse.c
@@ -38,7 +38,7 @@ BOARD_KERNEL_PAGESIZE 		:= 2048
 BOARD_KERNEL_SEPARATED_DT 	:= true
 BOARD_MKBOOTIMG_ARGS 		:= --ramdisk_offset 0x02000000 --tags_offset 0x1e00000
 TARGET_KERNEL_SOURCE := kernel/samsung/s3ve3g
-TARGET_KERNEL_CONFIG := twrp-matissewifi_defconfig
+TARGET_KERNEL_CONFIG := cm-matissewifi_defconfig
 TARGET_KERNEL_VARIANT_CONFIG := msm8226-sec_matissewifi_defconfig
 #TARGET_KERNEL_SELINUX_CONFIG := selinux_defconfig
 
@@ -74,16 +74,6 @@ BOARD_SUPPRESS_SECURE_ERASE := true
 #TARGET_RECOVERY_INITRC := device/htc/m8/recovery/etc/init.rc
 
 #BOARD_RECOVERY_BLDRMSG_OFFSET := 2048
-
-# SELinux
--include device/qcom/sepolicy/sepolicy.mk
-
-#BOARD_SEPOLICY_DIRS += device/samsung/matissewifi/sepolicy
-
-#BOARD_SEPOLICY_UNION += \
-#	mediaserver.te \
-#	platform_app.te \
-#	kernel.te
 
 # BlissPop Configs
 TARGET_TC_ROM := 4.8-sm
