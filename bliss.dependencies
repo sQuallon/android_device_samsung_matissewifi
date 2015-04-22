@@ -1,36 +1,43 @@
 [
     {
-        "remote": "TeamBliss-Devices",
-        "repository": "android_device_samsung_qcom-common",
+        "remote": "private",
+        "repository": "sub-b/msm8226-common",
+        "target_path": "device/samsung/msm8226-common",
+        "revision": "lp5.1-slim"
+    },
+    {
+        "remote": "private",
+        "repository": "sub-b/qcom-common",
         "target_path": "device/samsung/qcom-common",
-        "revision": "lp5.1"
+        "revision": "lp5.1-slim"
     },
   {
-    "remote": "sub-b",
-    "repository": "sub-b/android_device_samsung_msm8226-common",
-    "target_path": "device/samsung/msm8226-common",
-    "branch": "lp5.0-slim"
+    "remote": "private",
+    "repository": "sub-b/android_kernel_samsung_s3ve3g",
+    "target_path": "kernel/samsung/s3ve3g",
+    "branch": "lp5.1-slim"
   },
   {
-    "remote": "sub-b",
-    "repository": "sub-b/android_kernel_samsung_matissewifi",
-    "target_path": "kernel/samsung/matissewifi",
-    "branch": "master"
-  },
-  {
-    "remote": "sub-b",
+        "remote": "private",
     "repository": "sub-b/android_vendor_samsung_matissewifi",
     "target_path": "vendor/samsung/matissewifi",
     "branch": "lp5.1-slim"
   },
   {
-    "repository": "SlimRoms/device_qcom_common",
+    "remote": "cm",
+    "repository": "android_device_qcom_common",
     "target_path": "device/qcom/common",
-    "branch": "lp5.0"
+    "branch": "cm-12.1"
   },
   {
-    "repository": "SlimRoms/hardware_samsung",
+    "remote": "cm",
+    "repository": "android_device_qcom_fm",
+    "target_path": "device/qcom/fm",
+    "branch": "cm-12.1"
+  },
+  {
+    "repository": "android_hardware_samsung",
     "target_path": "hardware/samsung",
-    "branch": "lp5.0"
+    "branch": "cm-12.1"
   }
 ]
