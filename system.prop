@@ -32,3 +32,6 @@ dalvik.vm.dexopt-data-only=1
 
 # Debug
 ro.secure=0
+
+ro.product.device=matissewifi
+ro.product.model=SM-T530

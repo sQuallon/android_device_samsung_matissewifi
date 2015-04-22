@@ -21,3 +21,5 @@ $(call inherit-product, device/samsung/matissewifi/full_matissewifi.mk)
 # Release name
 PRODUCT_RELEASE_NAME := SM-T530
 PRODUCT_NAME := bliss_matissewifi
+
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=matissewifixx TARGET_DEVICE=matissewifi BUILD_FINGERPRINT="samsung/matissewifixx/matissewifi:4.4.2/KOT49H/T530XXU1ANH7:user/release-keys" PRIVATE_BUILD_DESC="matissewifixx-user 4.4.2 KOT49H T530XXU1ANH7 release-keys"

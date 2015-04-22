@@ -31,7 +31,7 @@ BOARD_KERNEL_SEPARATED_DT := true
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --tags_offset 0x1e00000
 TARGET_KERNEL_SOURCE := kernel/samsung/s3ve3g
 TARGET_KERNEL_CONFIG := msm8226-cm_defconfig
-TARGET_KERNEL_VARIANT_CONFIG := msm8926-cm_matissewifi_defconfig
+TARGET_KERNEL_VARIANT_CONFIG := msm8226-cm_matissewifi_defconfig
 #KERNEL_TOOLCHAIN_PREFIX := arm-linux-gnueabihf-
 #KERNEL_TOOLCHAIN := "$(ANDROID_BUILD_TOP)/prebuilt/$(HOST_OS)-x86/toolchain/linaro-4.9-14.06/bin/"
 
