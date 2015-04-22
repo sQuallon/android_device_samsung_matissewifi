@@ -31,8 +31,8 @@
   },
   {
     "remote": "cm",
-    "repository": "android_device_qcom_fm",
-    "target_path": "device/qcom/fm",
+    "repository": "android_hardware_qcom_fm.git",
+    "target_path": "hardware/qcom/fm",
     "branch": "cm-12.1"
   },
   {
