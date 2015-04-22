@@ -22,8 +22,8 @@ TARGET_OTA_ASSERT_DEVICE := matissewifi,matissewifixx
 # Architecture
 TARGET_CPU_VARIANT := krait
 
-# Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := MSM8226
+
+
 
 # Kernel
 BOARD_CUSTOM_BOOTIMG_MK := device/samsung/matissewifi/mkbootimg.mk
