@@ -104,8 +104,7 @@ PRODUCT_PACKAGES += \
 
 # Thermal
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/thermal-engine-8226.conf:system/etc/thermal-engine-8226.conf \
-    $(LOCAL_PATH)/configs/thermald-8226.conf:system/etc/thermald-8226.conf
+    $(LOCAL_PATH)/configs/thermal-engine-8226.conf:system/etc/thermal-engine-8226.conf
 
 # Wifi
 PRODUCT_PACKAGES += \
