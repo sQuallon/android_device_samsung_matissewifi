@@ -234,9 +234,10 @@
              8 - Assistant (search)
             16 - App switch
          For example, a device with Home, Back and Menu keys would set this
-         config to 7. > 
+         config to 7. > -->
     <integer name="config_deviceHardwareKeys">19</integer>
-    <integer name="config_deviceHardwareWakeKeys">1</integer>-->
+    <integer name="config_deviceHardwareWakeKeys">1</integer>
+
     <bool name="config_enableWifiDisplay">true</bool>
 
     <!--  Maximum number of supported users -->
