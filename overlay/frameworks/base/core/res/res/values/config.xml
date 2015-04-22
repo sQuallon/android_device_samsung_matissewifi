@@ -225,7 +225,7 @@
     </integer-array>
 
     <!-- Workaround for devices with broken keyboards -->
-    <bool name="config_forceDisableHardwareKeyboard">true</bool>
+    <bool name="config_forceDisableHardwareKeyboard">false</bool>
 
     <!-- Hide this setting because we are forcing it to be enabled in build.prop.
          Note: This is declared in both values/config.xml and values-sw600dp/config.xml.
@@ -264,11 +264,6 @@
 
     <!--  Maximum number of supported users -->
     <integer name="config_multiuserMaximumUsers">8</integer>
-
-    <!-- Indicate whether closing the lid causes the device to go to sleep and opening
-      it causes the device to wake up.
-      The default is false. -->
-    <bool name="config_lidControlsSleep">true</bool>
 
     <!-- Base "touch slop" value used by ViewConfiguration as a
          movement threshold where scrolling should begin. -->
