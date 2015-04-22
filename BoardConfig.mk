@@ -20,7 +20,7 @@ TARGET_SPECIFIC_HEADER_PATH := device/samsung/matissewifi/include
 TARGET_OTA_ASSERT_DEVICE := matissewifi,matissewifixx
 
 # Architecture
-TARGET_CPU_VARIANT := cortex-a7
+TARGET_CPU_VARIANT := krait
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := MSM8226
