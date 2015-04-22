@@ -1,14 +1,14 @@
 [
+    {
+        "remote": "TeamBliss-Devices",
+        "repository": "android_device_samsung_qcom-common",
+        "target_path": "device/samsung/qcom-common",
+        "revision": "lp5.1"
+    },
   {
     "remote": "sub-b",
     "repository": "sub-b/android_device_samsung_msm8226-common",
     "target_path": "device/samsung/msm8226-common",
-    "branch": "lp5.0-slim"
-  },
-  {
-    "remote": "sub-b",
-    "repository": "sub-b/android_device_samsung_qcom-common",
-    "target_path": "device/samsung/qcom-common",
     "branch": "lp5.0-slim"
   },
   {
@@ -21,7 +21,7 @@
     "remote": "sub-b",
     "repository": "sub-b/android_vendor_samsung_matissewifi",
     "target_path": "vendor/samsung/matissewifi",
-    "branch": "lp5.0-slim"
+    "branch": "lp5.1-slim"
   },
   {
     "repository": "SlimRoms/device_qcom_common",
