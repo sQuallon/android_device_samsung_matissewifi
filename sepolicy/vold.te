@@ -1,2 +1,0 @@
-allow vold mmc_block_device:blk_file { read write getattr open };
-allow vold mmc_block_device:blk_file ioctl;
