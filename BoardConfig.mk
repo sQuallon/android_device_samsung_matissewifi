@@ -41,7 +41,7 @@ TARGET_PROVIDES_GPS_LOC_API := true
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_msm
 TARGET_LIBINIT_DEFINES_FILE := device/samsung/matissewifi/init/init_matissewifi.c
-TARGET_UNIFIED_DEVICE := true
+#TARGET_UNIFIED_DEVICE := true
 
 # Graphics
 TARGET_HAVE_NEW_GRALLOC := true
