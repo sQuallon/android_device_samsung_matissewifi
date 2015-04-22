@@ -250,8 +250,8 @@
             16 - App switch
          For example, a device with Home, Back and Menu keys would set this
          config to 7. -->
-    <integer name="config_deviceHardwareKeys">19</integer>
-
+    <integer name="config_deviceHardwareKeys">71</integer>
+    <integer name="config_deviceHardwareWakeKeys">65</integer>
     <!-- Indicate whether closing the lid causes the device to go to sleep and opening
          it causes the device to wake up.
          The default is false. -->
