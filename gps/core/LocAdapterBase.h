@@ -82,6 +82,8 @@ public:
     virtual void reportSv(GpsSvStatus &svStatus,
                           GpsLocationExtended &locationExtended,
                           void* svExt);
+    virtual void reportSvMeasurement(GnssSvMeasurementSet &svMeasurementSet);
+    virtual void reportSvPolynomial(GnssSvPolynomial &svPolynomial);
     virtual void reportStatus(GpsStatusValue status);
     virtual void reportNmea(const char* nmea, int length);
     virtual bool reportXtraServer(const char* url1, const char* url2,
@@ -97,6 +99,7 @@ public:
     virtual bool requestNiNotify(GpsNiNotification &notify,
                                  const void* data);
     inline virtual bool isInSession() { return false; }
+    ContextBase* getContext() const { return mContext; }
 };
 
 } // namespace loc_core

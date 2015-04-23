@@ -244,6 +244,22 @@ void LocApiBase::reportSv(GpsSvStatus &svStatus,
     );
 }
 
+void LocApiBase::reportSvMeasurement(GnssSvMeasurementSet &svMeasurementSet)
+{
+    // loop through adapters, and deliver to all adapters.
+    TO_ALL_LOCADAPTERS(
+        mLocAdapters[i]->reportSvMeasurement(svMeasurementSet)
+    );
+}
+
+void LocApiBase::reportSvPolynomial(GnssSvPolynomial &svPolynomial)
+{
+    // loop through adapters, and deliver to all adapters.
+    TO_ALL_LOCADAPTERS(
+        mLocAdapters[i]->reportSvPolynomial(svPolynomial)
+    );
+}
+
 void LocApiBase::reportStatus(GpsStatusValue status)
 {
     // loop through adapters, and deliver to all adapters.
@@ -404,7 +420,8 @@ enum loc_api_adapter_err LocApiBase::
 DEFAULT_IMPL(LOC_API_ADAPTER_ERR_SUCCESS)
 
 enum loc_api_adapter_err LocApiBase::
-    setSensorControlConfig(int sensorUsage)
+    setSensorControlConfig(int sensorUsage,
+                           int sensorProvider)
 DEFAULT_IMPL(LOC_API_ADAPTER_ERR_SUCCESS)
 
 enum loc_api_adapter_err LocApiBase::

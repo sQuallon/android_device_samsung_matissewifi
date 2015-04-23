@@ -197,6 +197,7 @@ extern "C" const GpsInterface* get_gps_interface()
     switch (gnssType)
     {
     case GNSS_GSS:
+    case GNSS_AUTO:
         //APQ8064
         gps_conf.CAPABILITIES &= ~(GPS_CAPABILITY_MSA | GPS_CAPABILITY_MSB);
         gss_fd = open("/dev/gss", O_RDONLY);
@@ -241,8 +242,9 @@ SIDE EFFECTS
 static int loc_init(GpsCallbacks* callbacks)
 {
     int retVal = -1;
-    ENTRY_LOG();
+    unsigned int target = (unsigned int) -1;
     LOC_API_ADAPTER_EVENT_MASK_T event;
+    ENTRY_LOG();
 
     if (NULL == callbacks) {
         LOC_LOGE("loc_init failed. cb = NULL\n");
@@ -258,6 +260,15 @@ static int loc_init(GpsCallbacks* callbacks)
             LOC_API_ADAPTER_BIT_STATUS_REPORT |
             LOC_API_ADAPTER_BIT_NMEA_1HZ_REPORT |
             LOC_API_ADAPTER_BIT_NI_NOTIFY_VERIFY_REQUEST;
+
+    target = loc_get_target();
+
+    /*For "auto" platform enable Measurement report and SV Polynomial report*/
+    if(GNSS_AUTO == getTargetGnssType(target))
+    {
+        event |= LOC_API_ADAPTER_BIT_GNSS_MEASUREMENT_REPORT |
+                LOC_API_ADAPTER_BIT_GNSS_SV_POLYNOMIAL_REPORT;
+    }
 
     LocCallbacks clientCallbacks = {local_loc_cb, /* location_cb */
                                     callbacks->status_cb, /* status_cb */
@@ -276,8 +287,8 @@ static int loc_init(GpsCallbacks* callbacks)
 
     retVal = loc_eng_init(loc_afw_data, &clientCallbacks, event, NULL);
     loc_afw_data.adapter->requestUlp(gps_conf.CAPABILITIES);
-    loc_afw_data.adapter->mAgpsEnabled = !loc_afw_data.adapter->hasAgpsExt();
-    loc_afw_data.adapter->mCPIEnabled = !loc_afw_data.adapter->hasCPIExt();
+    loc_afw_data.adapter->mSupportsAgpsRequests = !loc_afw_data.adapter->hasAgpsExtendedCapabilities();
+    loc_afw_data.adapter->mSupportsPositionInjection = !loc_afw_data.adapter->hasCPIExtendedCapabilities();
 
     EXIT_LOG(%d, retVal);
     return retVal;
@@ -461,33 +472,11 @@ SIDE EFFECTS
 ===========================================================================*/
 static int loc_inject_location(double latitude, double longitude, float accuracy)
 {
-    static bool initialized = false;
-    static bool enable_cpi = true;
-    accuracy = 1000;
     ENTRY_LOG();
 
-    if(!initialized)
-    {
-        char value[PROPERTY_VALUE_MAX];
-        memset(value, 0, sizeof(value));
-        (void)property_get("persist.gps.qc_nlp_in_use", value, "0");
-        if(0 == strcmp(value, "1"))
-        {
-            enable_cpi = false;
-            LOC_LOGI("GPS HAL coarse position injection disabled");
-        }
-        else
-        {
-            LOC_LOGI("GPS HAL coarse position injection enabled");
-        }
-        initialized = true;
-    }
-
     int ret_val = 0;
-    if(enable_cpi)
-    {
-      ret_val = loc_eng_inject_location(loc_afw_data, latitude, longitude, accuracy);
-    }
+    ret_val = loc_eng_inject_location(loc_afw_data, latitude, longitude, accuracy);
+
     EXIT_LOG(%d, ret_val);
     return ret_val;
 }
@@ -543,7 +532,7 @@ const GpsGeofencingInterface* get_geofence_interface(void)
     }
     dlerror();    /* Clear any existing error */
     get_gps_geofence_interface = (get_gps_geofence_interface_function)dlsym(handle, "gps_geofence_get_interface");
-    if ((error = dlerror()) != NULL)  {
+    if ((error = dlerror()) != NULL && NULL != get_gps_geofence_interface)  {
         LOC_LOGE ("%s, dlsym for get_gps_geofence_interface failed, error = %s\n", __func__, error);
         goto exit;
      }
@@ -800,8 +789,12 @@ SIDE EFFECTS
 static int loc_xtra_inject_data(char* data, int length)
 {
     ENTRY_LOG();
-    int ret_val = loc_eng_xtra_inject_data(loc_afw_data, data, length);
-
+    int ret_val = -1;
+    if( (data != NULL) && ((unsigned int)length <= XTRA_DATA_MAX_SIZE))
+        ret_val = loc_eng_xtra_inject_data(loc_afw_data, data, length);
+    else
+        LOC_LOGE("%s, Could not inject XTRA data. Buffer address: %p, length: %d",
+                 __func__, data, length);
     EXIT_LOG(%d, ret_val);
     return ret_val;
 }

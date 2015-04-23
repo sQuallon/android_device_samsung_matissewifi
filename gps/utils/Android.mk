@@ -12,13 +12,15 @@ LOCAL_SHARED_LIBRARIES := \
     liblog
 
 LOCAL_SRC_FILES += \
+    sec_gps.c \
     loc_log.cpp \
     loc_cfg.cpp \
     msg_q.c \
     linked_list.c \
     loc_target.cpp \
     loc_timer.c \
-    ../platform_lib_abstractions/elapsed_millis_since_boot.cpp
+    ../platform_lib_abstractions/elapsed_millis_since_boot.cpp \
+    loc_misc_utils.cpp
 
 
 LOCAL_CFLAGS += \
@@ -42,7 +44,8 @@ LOCAL_COPY_HEADERS:= \
    loc_timer.h \
    ../platform_lib_abstractions/platform_lib_includes.h \
    ../platform_lib_abstractions/platform_lib_time.h \
-   ../platform_lib_abstractions/platform_lib_macros.h
+   ../platform_lib_abstractions/platform_lib_macros.h \
+   loc_misc_utils.h
 
 
 LOCAL_MODULE := libgps.utils

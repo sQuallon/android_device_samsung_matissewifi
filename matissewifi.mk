@@ -45,15 +45,15 @@ PRODUCT_PACKAGES += \
     gps.msm8226
 
 PRODUCT_COPY_FILES += \
-    device/samsung/matissewifi/gps/etc/gps.conf:/system/etc/gps.conf \
-    device/samsung/matissewifi/gps/etc/sap.conf:/system/etc/sap.conf
+    device/samsung/matissewifi/gps/gps.conf:/system/etc/gps.conf \
+    device/samsung/matissewifi/gps/sap.conf:/system/etc/sap.conf
 
 # Input device
 PRODUCT_COPY_FILES += \
     device/samsung/matissewifi/idc/sec_e-pen.idc:system/usr/idc/sec_e-pen.idc
 
 # IR
-PRODUCT_PACKAGES += consumerir.msm8226
+# PRODUCT_PACKAGES += consumerir.msm8226
 
 # Keylayouts
 PRODUCT_COPY_FILES += \

@@ -41,7 +41,7 @@ LOCAL_CFLAGS += \
 LOCAL_C_INCLUDES:= \
     $(TARGET_OUT_HEADERS)/gps.utils \
     $(TARGET_OUT_HEADERS)/libloc_core \
-    device/samsung/matissewifi/gps/loc_api/libloc_api_50001
+    $(LOCAL_PATH)
 
 LOCAL_COPY_HEADERS_TO:= libloc_eng/
 LOCAL_COPY_HEADERS:= \
@@ -60,7 +60,7 @@ include $(BUILD_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
 
-LOCAL_MODULE := gps.msm8226
+LOCAL_MODULE := gps.$(TARGET_BOARD_PLATFORM)
 LOCAL_MODULE_OWNER := qcom
 
 LOCAL_MODULE_TAGS := optional
@@ -74,8 +74,7 @@ LOCAL_SHARED_LIBRARIES := \
     libloc_eng \
     libloc_core \
     libgps.utils \
-    libdl \
-    libandroid_runtime
+    libdl
 
 LOCAL_SRC_FILES += \
     loc.cpp \

@@ -15,12 +15,14 @@
 # inherit from common msm8226
 -include device/samsung/msm8226-common/BoardConfigCommon.mk
 
+LOCAL_PATH := device/samsung/matissewifi
+
 TARGET_SPECIFIC_HEADER_PATH := device/samsung/matissewifi/include
 
 TARGET_OTA_ASSERT_DEVICE := matissewifi,matissewifixx
 
 # Architecture
-TARGET_CPU_VARIANT := cortex-a7
+TARGET_CPU_VARIANT := krait
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := MSM8226
@@ -61,7 +63,7 @@ TARGET_LIBINIT_DEFINES_FILE := device/samsung/matissewifi/init/init_matissewifi.
 TARGET_UNIFIED_DEVICE := true
 
 # IR
-TARGET_PROVIDES_CONSUMERIR_HAL := true
+#TARGET_PROVIDES_CONSUMERIR_HAL := true
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
@@ -79,7 +81,7 @@ TARGET_POWERHAL_SET_INTERACTIVE_EXT := device/samsung/matissewifi/power/power_ex
 TARGET_POWERHAL_VARIANT := qcom
 
 # Recovery
-COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
+##COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
 BOARD_HAS_LARGE_FILESYSTEM := true
 BOARD_HAS_NO_MISC_PARTITION := true
 BOARD_HAS_NO_SELECT_BUTTON := true

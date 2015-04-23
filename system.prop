@@ -25,3 +25,7 @@ dalvik.vm.dexopt-data-only=1
 
 # Debug
 ro.secure=0
+
+ # SELinux
+#ro.boot.selinux=permissive
+ro.boot.selinux=disabled
